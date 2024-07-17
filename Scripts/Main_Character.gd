@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
 @onready var sprite = $AnimatedSprite2D
-var speed = 400  # speed in pixels/sec
+@onready var hitbox = $Hitbox/HitboxAlan
+@onready var enemy = get_parent().get_node("enemy")
+var speed = 400
 var vuruyormu = false
 
 func _physics_process(delta):
@@ -18,9 +20,22 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Attack"):
 		print("saldirildi")
 		vuruyormu = true
+		hitbox.disabled = false
 		sprite.play("Attack")
 	move_and_slide()
 
 
 func _on_animated_sprite_2d_animation_finished():
-	pass # Replace with function body.
+	if sprite.animation == "Attack":
+		vuruyormu = false
+		hitbox.disabled = true
+
+
+func _on_hitbox_body_entered(body):
+	if body.name == "enemy":
+		print("dusman")
+		var enemy_sprite = body.get_node("$AnimatedSprite2D")
+		if enemy_sprite:
+			enemy_sprite.play("Death")
+			print("oldu")
+			

@@ -873,5 +873,5 @@ position = Vector2(374, 377)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_gq7tn")
 
-[node name="CharacterBody2D2" parent="." instance=ExtResource("3_4ashg")]
+[node name="enemy" parent="." instance=ExtResource("3_4ashg")]
 position = Vector2(849, 378)
