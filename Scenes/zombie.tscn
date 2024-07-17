@@ -1,0 +1,64 @@
+[gd_scene load_steps=13 format=3 uid="uid://b4lskkr3vfsfb"]
+
+[ext_resource type="Script" path="res://Scripts/zombie.gd" id="1_3uawq"]
+[ext_resource type="Texture2D" uid="uid://bx2gjf1inmtw5" path="res://Assets/Zombie_LV1/Walk/walk_000.png" id="11_s7mvu"]
+[ext_resource type="Texture2D" uid="uid://cg87xvu5xrgcr" path="res://Assets/Zombie_LV1/Walk/walk_001.png" id="12_ipo1r"]
+[ext_resource type="Texture2D" uid="uid://bfge82j32wku4" path="res://Assets/Zombie_LV1/Walk/walk_002.png" id="13_65vmr"]
+[ext_resource type="Texture2D" uid="uid://2s5ylk807jil" path="res://Assets/Zombie_LV1/Walk/walk_003.png" id="14_vklf1"]
+[ext_resource type="Texture2D" uid="uid://cpwf75v8ly5b2" path="res://Assets/Zombie_LV1/Walk/walk_004.png" id="15_evko8"]
+[ext_resource type="Texture2D" uid="uid://b4n0xncgoqsqo" path="res://Assets/Zombie_LV1/Walk/walk_005.png" id="16_4l6o0"]
+[ext_resource type="Texture2D" uid="uid://crijoul2okrj2" path="res://Assets/Zombie_LV1/Walk/walk_006.png" id="17_8i1y4"]
+[ext_resource type="Texture2D" uid="uid://cwbjxfvamlnqb" path="res://Assets/Zombie_LV1/Walk/walk_007.png" id="18_cdh3y"]
+[ext_resource type="Texture2D" uid="uid://cfbb5le2msiwx" path="res://Assets/Zombie_LV1/Walk/walk_008.png" id="19_hgh0y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6fj7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2c7da"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_s7mvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ipo1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_65vmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vklf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_evko8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4l6o0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_8i1y4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_cdh3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_hgh0y")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_3uawq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a6fj7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -1.5708
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_2c7da")
+animation = &"Walk"
+autoplay = "Walk"
+frame = 5
+frame_progress = 0.474929

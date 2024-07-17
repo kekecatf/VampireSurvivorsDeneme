@@ -1,21 +1,26 @@
 extends CharacterBody2D
 
-
-const SPEED = 300.0
-
+@onready var sprite = $AnimatedSprite2D
+var speed = 400  # speed in pixels/sec
+var vuruyormu = false
 
 func _physics_process(delta):
-
-	var vertical_direction =Input.get_axis("Up", "Down")
-	if vertical_direction:
-		velocity.y = vertical_direction * SPEED
-	else:
-		velocity.y = move_toward(velocity.y,0,SPEED)
+	look_at(get_global_mouse_position())
 	
-	var horizontal_direction = Input.get_axis("Left", "Right")
-	if horizontal_direction:
-		velocity.x = horizontal_direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	var direction:Vector2 = Input.get_vector("Left", "Right", "Up", "Down")
+	velocity = direction * speed
+	if vuruyormu == false:
+		sprite.play("Walk")
+	
+	if direction == Vector2(0,0) and vuruyormu == false:
+		sprite.play("Idle")
+		
+	if Input.is_action_just_pressed("Attack"):
+		print("saldirildi")
+		vuruyormu = true
+		sprite.play("Attack")
 	move_and_slide()
+
+
+func _on_animated_sprite_2d_animation_finished():
+	pass # Replace with function body.
