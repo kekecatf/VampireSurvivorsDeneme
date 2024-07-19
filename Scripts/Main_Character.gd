@@ -22,11 +22,21 @@ func _physics_process(delta):
 		vuruyormu = true
 		hitbox.disabled = false
 		sprite.play("Attack")
+		
+	if Input.is_action_just_pressed("Heavy_Attack"):
+		print("şarjlı ağır saldırı")
+		vuruyormu = true
+		sprite.play("Charge_Heavy_Attack")
+	if Input.is_action_just_released("Heavy_Attack"):
+		print("ağır saldırı")
+		vuruyormu = true
+		hitbox.disabled = false
+		sprite.play("Heavy_Attack")
 	move_and_slide()
 
 
 func _on_animated_sprite_2d_animation_finished():
-	if sprite.animation == "Attack":
+	if sprite.animation == "Attack" or "Heavy_Attack":
 		vuruyormu = false
 		hitbox.disabled = true
 

@@ -74,6 +74,52 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_himdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n236x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o28nx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pvp1s")
+}],
+"loop": false,
+"name": &"Charge_Heavy_Attack",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_e8lfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uo555")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c522j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_x5iq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fao30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fykno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gimwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_njyjk")
+}],
+"loop": false,
+"name": &"Heavy_Attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_mjb05")
 }, {
 "duration": 1.0,
@@ -137,10 +183,8 @@ script = ExtResource("1_eudv2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_piqgx")
-animation = &"Attack"
+animation = &"Charge_Heavy_Attack"
 autoplay = "Idle"
-frame = 11
-frame_progress = 1.0
 offset = Vector2(0, 128)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
