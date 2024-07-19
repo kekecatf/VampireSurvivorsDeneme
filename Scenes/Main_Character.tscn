@@ -183,7 +183,7 @@ script = ExtResource("1_eudv2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_piqgx")
-animation = &"Charge_Heavy_Attack"
+animation = &"Walk"
 autoplay = "Idle"
 offset = Vector2(0, 128)
 
